@@ -1,16 +1,16 @@
 from .base import *
 
-DEBUG = False
+DEBUG = config('DEBUG', cast=bool)
 ALLOWED_HOSTS = ['ip-address', 'www.your-website.com']
 
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'your-db-name',
-        'USER': 'your-db-user-name',
-        'PASSWORD': 'db-password',
-        'HOST': 'localhost',
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
+        'HOST': config('DB_HOST'),
         'PORT': ''
     }
 }
