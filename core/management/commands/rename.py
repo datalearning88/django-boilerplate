@@ -1,11 +1,12 @@
-from django.core.management.base import BaseCommand
 import os
+from django.core.management.base import BaseCommand
+
 
 class Command(BaseCommand):
-    help = 'Rename a Django Project'
+    help = 'Renames a Django Project'
 
     def add_arguments(self, parser):
-        parser.add_arguments('new_project_name', type=str, help='The new Django project name')
+        parser.add_argument('new_project_name', type=str, help='The new Django project name')
     
     def handle(self, *args, **kwargs):
         new_project_name = kwargs['new_project_name']
